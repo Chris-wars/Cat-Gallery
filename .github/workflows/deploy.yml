@@ -32,15 +32,17 @@ jobs:
               run: |
                 set -e
 
-                    echo "🔎 Prüfe, ob 'Cute Cat Gallery' in index.html vorkommt..."
-                    if ! grep -qi "Cute Cat Gallery" index.html; then
+                echo "🔎 Prüfe, ob 'Cute Cat Gallery' in index.html vorkommt..."
+                if ! grep -qi "Cute Cat Gallery" index.html; then
                     echo "❌ Titel 'Cute Cat Gallery' nicht gefunden!"
                     exit 1
-                    fi
+                fi
 
-                    echo "✅ Alle einfachen Tests bestanden."
+                echo "✅ Alle einfachen Tests bestanden."
+
     build:
         runs-on: ubuntu-latest
+        needs: test
 
         steps:
             - name: Checkout repository
