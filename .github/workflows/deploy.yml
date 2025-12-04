@@ -18,14 +18,17 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v4
 
+            # ERSETZEN SIE "your-project-directory" DURCH IHREN PROJEKTORDNER
             - name: Install dependencies
               run: npm install
               working-directory: ./your-project-directory
 
+            # ERSETZEN SIE "your-project-directory" DURCH IHREN PROJEKTORDNER
             - name: Build project
               run: npm run build
               working-directory: ./your-project-directory
 
+            # ERSETZEN SIE "your-project-directory" DURCH IHREN PROJEKTORDNER
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
